@@ -25,8 +25,8 @@ function calculate() {
 		0.4 * document.getElementById("paint").value +
 		(1-document.getElementById("manufacturerValue").value) * document.getElementById("parts").value;
 	var profit = document.getElementById("insurancePayout").value - cost;
-   	document.getElementById("resultCost").innerHTML = "£".concat(cost);
-	document.getElementById("resultProfit").innerHTML = "£".concat(profit);
+   	document.getElementById("resultCost").innerHTML = "£".concat(cost.toFixed(2));
+	document.getElementById("resultProfit").innerHTML = "£".concat(profit.toFixed(2));
 	if (profit < 0) {
 		document.getElementById("resultProfit").style.color = "red";
 	}
