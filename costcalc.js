@@ -58,4 +58,6 @@ function changeInsuranceImage(imagefile) {
 		elements[i].src = imagefile;
 	}	
 }
-changeTab(1);
+window.onload = function() {
+ changeTab(1);
+}
