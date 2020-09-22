@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>Cost Calc</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="costcalc.js"  type="text/javascript">
+<body onload="changeTab(1);"/>
+</script>
+<style  type="text/css">
+body {font-family: Arial;}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.midblock {
+  <!-- display: inline-block; -->
+  <!-- height: 100%; -->
+  <!-- width: 50%; -->
+  margin: 0 auto;
+  padding: 5%;
+}
+
+.changetab {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  max-width: 180px;
+  border-radius: 10%;
+}
+
+.changetab:hover {
+    -webkit-filter: brightness(70%);
+}
+
+.imagehover:hover {
+    -webkit-filter: brightness(70%);
+}
+
+</style>
+</head>
+<body>
+
+<div id="t1" class="tabcontent">
+	<img style="text-align:right;" src="gemini.png" class="center" alt=""/>
+	<h3 style="text-align:center">Fixed cost calculator</h3>
+	<h3 style="text-align:center">Please select</h3>
+	<input style="border-style: groove;" class="center imagehover" type="image" src="esure.png" onclick="esure()" /><br/>
+	<input style="border-style: groove;" class="center imagehover" type="image" src="lv.png" onclick="lv()" />
+</div>
+
+<div id="t2" class="tabcontent">
+    <img class="center insuranceimage" alt="" src=""/>
+    <div class="midblock">
+	<fieldset>
+		<legend style="text-align:center">Enter Total Labour Hours</legend>
+        <input type="number" id="hours" class="center"/><br/>
+	</fieldset>
+	</div>
+    <button class="changetab" onclick="changeTab(3)">Next</button><br/>
+    <button class="changetab" onclick="changeTab(1)">Go back</button>
+</div>
+
+<div id="t3" class="tabcontent">
+    <img class="center insuranceimage" alt="" src=""/>
+    <div class="midblock">
+	<fieldset>
+		<legend style="text-align:center">Enter Total Paint Cost</legend>
+        <input type="number" id="paint" class="center" placeholder="£"></input><br/>
+	</fieldset>
+	</div>
+  <button class="changetab" onclick="changeTab(4)">Next</button><br/>
+  <button class="changetab" onclick="changeTab(2)">Go back</button>
+</div>
+
+<div id="t4" class="tabcontent">
+  <img class="center insuranceimage" alt=""/>
+  <div class="midblock">
+    <fieldset>
+		<legend style="text-align:center">Choose parts manufacturer</legend>
+		  <select class="center" name="manufacturer" id="manufacturer" multiple="true">
+			<option value="0.25">Alfa Romeo</option>
+			<option value="0.22">Audi</option>
+			<option value="0.26">BMW</option>
+			<option value="0.26">Citroen</option>
+			<option value="0.25">Fiat</option>
+			<option value="0.25">Ford</option>
+			<option value="0.18">Honda</option>
+			<option value="0.25">Hyundai</option>
+			<option value="0.19">Jaguar</option>
+			<option value="0.25">Jeep</option>
+			<option value="0.25">Kia</option>
+			<option value="0.19">Land Rover</option>
+			<option value="0.15">Mazda</option>
+			<option value="0.18">Mercedes</option>
+			<option value="0.26">Mini</option>
+			<option value="0.22">Mitsubishi</option>
+			<option value="0.26">Nissan</option>
+			<option value="0.26">Peugeot</option>
+			<option value="0.25">Renault</option>
+			<option value="0.22">SEAT</option>
+			<option value="0.22">Skoda</option>
+			<option value="0.23">Suzuki</option>
+			<option value="0.21">Toyota</option>
+			<option value="0.27">Volvo</option>
+			<option value="0.36">Vauxhall</option>
+			<option value="0.22">VW</option>
+			<option value="0.25">Other</option>
+		  </select>
+    </fieldset>
+	</div>
+  <button class="changetab" onclick="changeTab(5)">Next</button><br/>
+  <button class="changetab" onclick="changeTab(3)">Go back</button>
+</div>
+
+<div id="t5" class="tabcontent">
+  <img width="50%" class="center insuranceimage" alt=""/>
+  <div class="midblock">
+	<fieldset>
+		<legend style="text-align:center">Enter Total Parts Cost</legend>
+        <input type="number" id="parts" class="center" placeholder="£"></input><br/>
+	</fieldset>
+  	</div>
+
+  <button class="changetab" onclick="calculate()">Next</button><br/>
+  <button class="changetab" onclick="changeTab(4)">Go back</button>
+</div>
+
+<div id="t6" class="tabcontent">
+    <img src="gemini.png" class="center" alt=""/>
+  <h3 style="text-align:center">This repair will cost us approximately</h3>
+  <h2 style="text-align:center" id="resultCost"></h2>
+
+  <p style="text-align:center">This can be reduced if you can use Green parts or a Total Loss Avoidance Scheme</p>
+  <h3 style="text-align:center">Giving a fixed cost profit of</h3>
+  <h2 style="text-align:center" id="resultProfit"></h2>
+
+  <button class="changetab" onclick="startAgain()">Start Again</button>
+</div>
+
+<input hidden="true" type="number" id="insurancePayout"/>
+<input hidden="true" type="number" id="manufacturerValue"/>
+
+</body>
+</html>
