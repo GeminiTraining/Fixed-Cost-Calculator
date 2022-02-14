@@ -49,12 +49,12 @@ function startAgain() {
 }
 
 function esure() {
-	document.getElementById("insurancePayout").value = '1350';
+	document.getElementById("insurancePayout").value = '1450';
 	changeInsuranceImage('esure.png');
 	changeTab(2);
 }
 function lv() {
-	document.getElementById("insurancePayout").value = '1400';
+	document.getElementById("insurancePayout").value = '1500';
 	changeInsuranceImage('lv.png');
 	changeTab(2);
 }
