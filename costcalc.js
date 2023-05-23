@@ -54,7 +54,7 @@ function esure() {
 	changeTab(2);
 }
 function lv() {
-	document.getElementById("insurancePayout").value = '1580.50';
+	document.getElementById("insurancePayout").value = '1666';
 	changeInsuranceImage('lv.png');
 	changeTab(2);
 }
