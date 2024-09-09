@@ -21,7 +21,7 @@ function setManufacturerValue() {
 
 function calculate() {
 	setManufacturerValue();
-	var cost = 15 * document.getElementById("hours").value +
+	var cost = 20 * document.getElementById("hours").value +
 		0.4 * document.getElementById("paint").value +
 		(1-document.getElementById("manufacturerValue").value) * document.getElementById("parts").value;
 	var profit = document.getElementById("insurancePayout").value - cost;
