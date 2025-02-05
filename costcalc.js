@@ -54,7 +54,7 @@ function esure() {
 	changeTab(2);
 }
 function lv() {
-	document.getElementById("insurancePayout").value = '2022';
+	document.getElementById("insurancePayout").value = '2183';
 	changeInsuranceImage('lv.png');
 	changeTab(2);
 }
